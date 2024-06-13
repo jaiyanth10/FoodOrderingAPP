@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Lato:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Lato:wght@400;700&display=swap");
 
 * {
   box-sizing: border-box;
@@ -6,19 +6,20 @@
 
 body {
   margin: 0;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Open Sans", Lato;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(#29251c, #2c2306);
+  background: linear-gradient(#3a3a3a, #5c5c5c);
   color: #d9e2f1;
   min-height: 100vh;
 }
 
+/* Base Styles */
 #main-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 3rem 10%;
+  padding: 3rem 2%;
 }
 
 #main-header #title {
@@ -32,48 +33,113 @@ body {
   height: 4rem;
   object-fit: contain;
   border-radius: 50%;
-  border: 2px solid #ffc404;
+  border: 2px solid #ff8000;
 }
 
-#main-header button {
+#main-header #buttons {
+  display: flex;
+  gap: 0.1rem;
+}
+
+#main-header #buttons button {
   font-size: 1.5rem;
-  font-family: 'Lato', sans-serif;
-  background:none;
-  border-style: none;
-  color: #ffc404;
+  font-family: "Lato", sans-serif;
+  background: none;
+  border: none;
+  color: #ff8000;
+  cursor: pointer;
+}
+
+#main-header #buttons button:hover {
+  color: rgb(240, 160, 11);
 }
 
 h1 {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: 700;
   font-size: 2rem;
   margin: 0;
-  color: #ffc404;
+  color: #ff8000;
   letter-spacing: 0.2rem;
   text-transform: uppercase;
 }
 
+/* Media Queries */
+
+/* Tablets and Medium Devices (768px and up) */
+@media (max-width: 768px) {
+  #main-header {
+    flex-direction: row;
+    align-items: center;
+    padding: 2rem 4%;
+  }
+
+  #main-header #title {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #main-header #buttons {
+    flex-direction:row;
+    align-items: center;
+    font-size: small;
+
+  }
+
+  h1 {
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+
+/* Phones and Small Devices (480px and up) */
+@media (max-width: 480px) {
+  #main-header {
+    padding: 1.5rem 4%;
+  }
+
+  #main-header #title {
+    gap: 0.5rem;
+  }
+
+  #main-header #title img {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  h1 {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    text-align: center;
+  }
+
+  #main-header #buttons {
+    gap: 0.1rem;
+    font-size: small;
+  }
+
+  #main-header #buttons button {
+    font-size: small;
+  }
+}
+
 #meals {
-  width: 90%;
+  width: 100%;
   max-width: 70rem;
   list-style: none;
   margin: 2rem auto;
   padding: 1rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
   gap: 1rem;
 }
 
 .meal-item {
-  background-color: #1d1a16;
+  background-color: #242424;
   border-radius: 1rem;
   overflow: hidden;
   text-align: center;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
-}
-
-.meal-item article {
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -81,7 +147,7 @@ h1 {
 
 .meal-item img {
   width: 100%;
-  height: 20rem;
+  height: 18rem;
   object-fit: cover;
 }
 
@@ -89,18 +155,19 @@ h1 {
   font-size: 1.5rem;
   font-weight: bold;
   margin: 0.75rem 0;
+  color: #f4f4f4;
 }
 
 .meal-item-description {
   margin: 1rem;
-  height: 70px;
-
+  height: 50px;
+  color: #e0e0e0;
 }
 
 .meal-item-price {
   display: inline-block;
-  background-color: #312c1d;
-  color: #ffc404;
+  background-color: #414141;
+  color: #ff8000;
   font-size: 0.9rem;
   font-weight: bold;
   padding: 0.5rem 2rem;
@@ -108,8 +175,74 @@ h1 {
   border-radius: 4px;
 }
 
-.meal-item-actions {
-  margin-bottom: 1.5rem;
+.button {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #ff8000;
+  color: #242424;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+select {
+  display: block;
+  width: 60%;
+  max-width: 15rem;
+  margin: 1rem auto;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  background: linear-gradient(135deg, #303030, #505050);
+  color: #f4f4f4;
+  font-size: 1rem;
+}
+
+select option {
+  background: #303030;
+  color: #f4f4f4;
+}
+
+.search-bar {
+  display: block;
+  width: 60%;
+  max-width: 15rem;
+  margin: 1rem auto;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  background: #303030;
+  color: #f4f4f4;
+  font-size: 1rem;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto;
+}
+
+.pagination button {
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  background-color: #ff8000;
+  color: #242424;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  margin: 0 1rem;
+  color: #f4f4f4;
 }
 
 .cart h2 {
@@ -146,9 +279,8 @@ h1 {
 }
 .modal-actions .okayButton:hover,
 .modal-actions .okayButton:active {
-  color: #049133;;
+  color: #049133;
 }
-
 
 .cart-total {
   display: flex;
@@ -184,7 +316,7 @@ h1 {
   border-radius: 50%;
   border: none;
   background-color: #312c1d;
-  color: #ffc404;
+  color: #ff8000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -193,7 +325,7 @@ h1 {
 .cart-item-actions button:hover,
 .cart-item-actions button:active {
   background-color: #1d1a16;
-  color: #ffab04;
+  color: rgb(240, 160, 11);
 }
 
 .control {
@@ -204,7 +336,6 @@ h1 {
 
 .control label {
   font-weight: bold;
-  
 }
 
 .control input {
@@ -226,8 +357,8 @@ h1 {
 .button {
   font: inherit;
   cursor: pointer;
-  background-color: #ffc404;
-  border: 1px solid #ffc404;
+  background-color: #ff8000;
+  border: 1px solid #ff8000;
   color: #1f1a09;
   padding: 0.5rem 1.5rem;
   border-radius: 4px;
@@ -235,8 +366,8 @@ h1 {
 
 .button:hover,
 .button:active {
-  background-color: #ffab04;
-  border-color: #ffab04;
+  background-color: rgb(240, 160, 11);
+  border-color: rgb(240, 160, 11);
   color: #1f1a09;
 }
 
@@ -250,7 +381,7 @@ h1 {
 
 .text-button:hover,
 .text-button:active {
-  color: #ffab04;
+  color: rgb(240, 160, 11);
 }
 
 .modal {
@@ -262,6 +393,7 @@ h1 {
   width: 80%;
   max-width: 40rem;
   animation: fade-slide-up 0.3s ease-out forwards;
+  overflow-y: hidden;
 }
 
 .modal::backdrop {
@@ -279,24 +411,21 @@ h1 {
     transform: translateY(0);
   }
 }
-#loading{
-  
+#loading {
   margin: 0 auto;
   text-align: center; /* For horizontal centering */
   position: absolute; /* For vertical centering */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-    
 }
 
-#success{
+#success {
   color: #049133;
   margin: 0 auto;
   text-align: center; /* For horizontal centering */
   position: absolute; /* For vertical centering */
-  top: 50%;
+  top: 48%;
   left: 50%;
   transform: translate(-50%, -50%);
-    
 }

@@ -9,7 +9,6 @@ export default function cart(){
     let totalPrice = 0;
     function increase(x){
       contextObject.countIncrease(x);
-      console.log(contextObject.countIncrease(x));
     }
     function decrease(x){
       contextObject.countDecrease(x);
@@ -24,10 +23,10 @@ export default function cart(){
           <ul key={Math.random()}>
             {
               
-            contextObject.items.map((i) => {
+            contextObject.items.map((i,id) => {
               totalPrice = (totalPrice + (i.count*i.price))
               return(
-                <li className="cart-item">{`${i.item}-${i.count}×${i.price}`}
+                <li key={id} className="cart-item">{`${i.item}-${i.count}×${i.price}`}
                 
               <div className="cart-item-actions">
               <button onClick={()=>decrease(i.item)}>-</button>
@@ -38,7 +37,7 @@ export default function cart(){
               );
             })}
           </ul>
-          <p className="cart-total">{totalPrice}</p>
+          <p className="cart-total">${totalPrice}</p>
         </div> 
         
      </Modal>
