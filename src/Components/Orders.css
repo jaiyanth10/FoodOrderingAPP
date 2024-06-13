@@ -1,0 +1,131 @@
+/* Base styles */
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.orderCard {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #f9f9f9;
+}
+
+.orderId {
+  font-size: 18px;
+  color: #555;
+}
+
+.orderDate {
+  font-size: 14px;
+  color: #888;
+}
+
+.itemsHeading {
+  font-size: 16px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: #444;
+}
+
+.itemsList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.item {
+  font-size: 14px;
+  color: #666;
+}
+
+.noOrders {
+  text-align: center;
+  color: #888;
+  font-size: 16px;
+}
+
+.closeButton {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.closeButton:hover {
+  background-color: #0056b3;
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+    margin: 15px auto;
+  }
+
+  .orderCard {
+    padding: 10px;
+  }
+
+  .orderId, .orderDate, .itemsHeading {
+    font-size: 16px;
+  }
+
+  .item {
+    font-size: 13px;
+  }
+
+  .heading {
+    font-size: 24px;
+  }
+
+  .closeButton {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+/* Small screens (phones) */
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+    margin: 10px auto;
+  }
+
+  .orderCard {
+    padding: 8px;
+  }
+
+  .orderId, .orderDate, .itemsHeading {
+    font-size: 14px;
+  }
+
+  .item {
+    font-size: 12px;
+  }
+
+  .heading {
+    font-size: 20px;
+  }
+
+  .closeButton {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}
